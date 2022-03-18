@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
   </head>
-  <body class="bg-white" id="page-top">
+  <body class="bg-primary" id="page-top">
 
       <!-- Main Nav Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,18 +26,15 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a style="color:white" class="nav-link active" aria-current="page" href="#">Item 1</a>
+            <ul class="navbar-nav mx-auto me-2">
+              <li class="nav-item pe-2">
+                <a style="color:white" class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
-                <a style="color:white" class="nav-link" href="#">Item 2</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categories
+              <li class="nav-item dropdown pe-2" id="navbarDropdown">
+                <a style="color:white" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
                 </a>
-                <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="mainNavDropdownMenu">
                   <li><a class="dropdown-item" href="#">Construction</a></li>
                   <li><a class="dropdown-item" href="#">Carpentry</a></li>
                   <li><a class="dropdown-item" href="#">Gardening</a></li>
@@ -47,57 +44,175 @@
                 </ul>
               </li>
               <!-- Search Form-->
-              <li class="nav-item">
+              <li class="nav-item pe-lg-3 border border-1 border-top-0 border-start-0 border-bottom-0 border-light pb-2 pb-lg-0" id="searchForm">
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchButton">
-                  <button class="btn btn-outline-primary" type="submit">Search</button>
+                  <input class="form-control me-2 pe-lg-5" type="search" placeholder="Search" aria-label="Search" id="searchButton">
+                  <button class="btn btn-secondary" type="submit">Search</button>
                 </form>
               </li>
             </ul>
             <!-- Sign Up and Login Forms -->
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown" id="register">
-                <button type="button" class="btn btn-outline-light" aria-pressed="false" id="signUpButton">Sign Up</button>
-                <button type="button" class="btn btn-primary ms-1" aria-pressed="false" id="loginButton">Login</button>
+            <ul class="navbar-nav ps-1">
+              <li class="nav-item" id="accountLogin">
+                <div>
+                  <!-- Register Button Trigger Modal-->
+                  <button type="button" class="btn btn-outline-primary ms-1" data-bs-toggle="modal" data-bs-target="#registerModal">
+                    Register
+                  </button>
+                  <!-- Register Modal -->
+                  <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-center">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title text-black d-flex justify-content-center">Account Registration</h3>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-black">
+                          <div class=" mt-2 mb-2 bg-light p-1" id="registerForm">
+                            <form style="max-width:480px; margin:auto">
+                              <label class="sr-only" for="firstNameRegister">First Name</label>
+                              <input class="form-control mb-3" type="text" aria-label="firstName" id="firstNameRegister" placeholder="Enter Name" required>
+                              <label class="sr-only" for="emailAddressRegister">Email</label>
+                              <input class="form-control mb-3" type="email" id="emailAddressRegister" placeholder="Enter Email" required autofocus>
+                              <label class="sr-only" for="passwordRegister">Password</label>
+                              <input class="form-control mb-3" type="password" id="passwordRegister" placeholder="Enter Password" required>
+                              <label class="sr-only" for="locationRegister">Location</label required>
+                              <input class="form-control mb-3" type="text" aria-label="userLocationInput" id="userLocationRegister" placeholder="Enter Town">
+                              <label class="sr-only" for="accountSelection">Please Select an Account</label>
+                              <select class="form-select mb-4" aria-label="selectAccount" id="accountSelection" required>
+                                <option selected value="1">Customer</option>
+                                <option value="2">Provider</option>
+                              </select>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                          <button class="btn btn-md btn-primary btn-block">Register</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- Register Form End -->
+
+                  <!-- Sign In Button Trigger Modal-->
+                  <button type="button" class="btn btn-primary ms-1" data-bs-toggle="modal" data-bs-target="#signInModal">
+                    Sign In
+                  </button>
+                  <!-- Sign In Modal -->
+                  <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-center">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title text-black d-flex justify-content-center">Please Sign In</h3>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-black">
+                          <div class=" mt-2 mb-2 bg-light p-1" id="signInForm">
+                            <form style="max-width:480px; margin:auto">
+                              <label class="sr-only" for="emailAddressLogin">Email</label>
+                              <input class="form-control mb-2" type="email" id="emailAddressLogin" placeholder="Enter Email" required autofocus>
+                              <label class="sr-only mt-3" for="passwordLogin">Password</label>
+                              <input class="form-control mb-2" type="password" id="passwordLogin" placeholder="Enter Password" required>
+                              <div class="form-check d-flex justify-content-center pt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label ps-2" for="flexCheckDefault">
+                                  Remember Me
+                                </label>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                          <button class="btn btn-md btn-primary btn-block">Sign In</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--Sign In Form End -->
+                </div>
                </li>
             </ul>
           </div>
         </div>
-      </nav>
+      </nav><!--End of Main Nav-->
 
-      <!-- Contents of platform -->
-      <div class="container-fluid bg-primary pt-1 pb-1">
-        <div class="container bg-secondary shadow">
-          placeholder
-        </div>
-        <div class="row mt-2 mb-2">
-          R1
-          <div class="col">
-            C1
+      <!-- Provider Container -->
+      <div class="container-fluid bg-transparent pt-3 pb-3">
+        
+        <!--Start of Provider Profile-->
+        <div class="row bg-light m-2 rounded">
+          <div class="col-12 col-lg-4 bg-transparent rounded pt-4">
+            <img src="images/electrician.jpg" class="d-block mx-auto my-auto shadow mb-4 rounded" id="providerImage"></img>
+            <div class="row bg-transparent rounded m-1">
+              <div class="col-6 d-flex align-items-center text-break fw-bold text-decoration-underline" id="providerName">
+                [Name]
+              </div>
+              <div class="col-6 d-flex align-items-center text-break" id="providerService">
+                Service: [service type]
+              </div>
+            </div>
+            <hr>
+            <div class="row d-flex justify-content-start">
+              <div class="col d-flex justify-content-lg-end p-2 p-lg-0">
+                <div class="btn-group dropdown pb-lg-3" id="contactInfoDropdown">
+                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contact Information
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" id="contactInfoDropMenu">
+                    <li><a class="dropdown-item text-dark" href="#">[Phone Number]</a></li>
+                    <li><a class="dropdown-item text-dark" href="#">[Email]</a></li>
+                    <li><hr class="dropdown-divider bg-dark m-2"></li>
+                    <li><a class="dropdown-item text-dark" href="#">@Socials</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <hr p-0 m-0 id="contactInfoHR">
           </div>
-          <div class="col">
-            C2
+          <div class="col-12 col-lg bg-transparent rounded">
+            <div class="row ps-3 ps-lg-2 pt-2 h3 text-decoration-underline">
+              Information
+            </div>
+            <hr p-0 m-0>
+            <div class="row bg-transparent pe-2 pe-lg-4">
+              <div class="col-6 bg-transparent text-center h6-lg d-flex justify-content-start text-secondary">
+                Rating
+              </div>
+              <div class="col-6 bg-transparent d-flex justify-content-end h6-lg text-secondary">
+                ★★★★☆
+              </div>
+            </div>
+            <hr p-0 m-0>
+            <div class="row bg-transparent fst-italic pt-2">
+              <h5>
+                Certificates and Licenses
+              </h5>
+              <div class="row-fluid text-center d-lg-flex">
+                <div class="col col-lg-6 pb-3">
+                  <img src="images/certificate.png" style="height:10em; width:14em;" class="shadow">
+                </div>
+                <div class="col col-lg-6 pb-3">
+                  <img src="images/license.jpeg" style="height:10em; width:14em;" class="shadow">
+                </div>
+              </div>
+            </div>
+            <hr p-0 m-0>
+            <div class="row rounded pb-3 ms-1 ms-lg-5 me-1 me-lg-5 mb-3 border">
+              <div class="h5 p-2" id="feedbackHeader">
+                Feedback
+              </div>
+              <div class="pt-2 pb-1 visually-hidden">Leave a comment</div>
+              <div class="col visually-hidden">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                  <label class="text-secondary" for="floatingTextarea">Comment</label>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row mt-2 mb-2">
-          R2
-          <div class="col">
-            C1
-          </div>
-          <div class="col">
-            C2
-          </div>
-        </div>
-        <div class="row mt-2 mb-2">
-          R3
-          <div class="col">
-            C1
-          </div>
-          <div class="col">
-            C2
-          </div>
-        </div>
-      </div>
+        </div> <!--End of Provider Profile-->
+
+      </div><!-- Provider Container End -->
 
       <!-- JS Components for Bootstrap -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

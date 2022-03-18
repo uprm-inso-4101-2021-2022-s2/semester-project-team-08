@@ -1,15 +1,71 @@
 
 
-@media screen and (min-width:992px){
-    .dropdown:hover .dropdown-menu{
+@media screen and (min-width:1200px){
+    #navbarDropdown.dropdown:hover .dropdown-menu{
         display: block;
     }
-    .dropdown .dropdown-menu{
-        display: none;
+    #navbarDropdown.dropdown .dropdown-menu{
+        display:none;
     }
+    #providerImage{
+        width: 90%;
+    }
+    #providerName{
+        font-size: x-large;
+    }
+    #providerService{
+        font-size: medium;
+    }
+    #contactInfoHR{
+        display:none;
+    }
+    
 }
 
-.nav-item, .dropdown-item{
-    color:white;
+@media screen and (max-width:1199px){
+    #providerImage{
+        width: 75%;
+    }
+    #providerName{
+        font-size: medium;
+    }
+    #providerService{
+        font-size: small;
+    }
+    #searchForm{
+        border-right: none !important;
+    }
+    #contactInfoDropdown{
+        width:100%;
+    }
+    #navbarSupportedContent{
+        text-align: center;
+    }
+    
 }
 
+#mainNavDropdownMenu.dropdown-menu{
+    background-color:rgb(232,232,232);
+}
+
+#mainNavDropdownMenu.dropdown-menu > li > a:hover{
+    background-color:rgb(210, 210, 210);
+}
+
+#feedbackHeader{
+    background-color:rgb(210, 210, 210);
+}
+
+#contactInfoDropMenu.dropdown-menu{
+    background-color:rgb(232,232,232);
+    min-width: 100%;
+    text-align:center
+}
+
+#contactInfoDropMenu.dropdown-menu > li > a:hover{
+    background-color:rgb(210, 210, 210);
+}
+
+#mainNavDropdownMenu.dropdown-menu{
+    text-align: center;
+}
