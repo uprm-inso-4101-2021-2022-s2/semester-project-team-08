@@ -72,19 +72,19 @@
                               <!-- Register Forms START -->
                             <form action = "/" method = "POST">
                               <label class="sr-only" for="firstNameRegister">First Name</label>
-                              <input class="form-control mb-3" type="text" name = "uname" aria-label="firstName" id="firstNameRegister" placeholder="Enter Name" required>
+                              <input class="form-control mb-3" type="text" name = "name" aria-label="firstName" id="firstNameRegister" placeholder="Enter Name" required>
 
                               <label class="sr-only" for="emailAddressRegister">Email</label>
-                              <input class="form-control mb-3" type="email" name = "uemail" id="emailAddressRegister" placeholder="Enter Email" required autofocus>
+                              <input class="form-control mb-3" type="email" name = "email" id="emailAddressRegister" placeholder="Enter Email" required autofocus>
 
                               <label class="sr-only" for="passwordRegister">Password</label>
-                              <input class="form-control mb-3" type="password" name = "upass" id="passwordRegister" placeholder="Enter Password" required>
+                              <input class="form-control mb-3" type="password" name = "pass" id="passwordRegister" placeholder="Enter Password" required>
 
                               <label class="sr-only" for="locationRegister">Location</label>
-                              <input class="form-control mb-3" type="text" name = "uloc" aria-label="userLocationInput" id="userLocationRegister" placeholder="Enter Town" required>
+                              <input class="form-control mb-3" type="text" name = "loc" aria-label="userLocationInput" id="userLocationRegister" placeholder="Enter Town" required>
 
                               <label class="sr-only" for="accountSelection">Please Select an Account</label>
-                              <select class="form-select mb-4" aria-label="selectAccount" id="accountSelection" required>
+                              <select class="form-select mb-4" name = "user_type" aria-label="selectAccount" id="accountSelection" required>
                                 <option selected value="1">Customer</option>
                                 <option value="2">Provider</option>
                               </select>

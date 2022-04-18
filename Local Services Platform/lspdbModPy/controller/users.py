@@ -26,10 +26,10 @@ class Users:
 
     #1 - Inserts new user to users table with parameters given by client
     def addNewUser(self, json):
-        uname = json['uname']
-        uemail = json['uemail']
-        upass = json['upass']
-        uloc = json['uloc']
+        uname = json['name']
+        uemail = json['email']
+        upass = json['pass']
+        uloc = json['loc']
         dao = UsersDAO()
         uid = dao.addNewUser(uname, uemail, upass, uloc)
         result = self.build_attr_dict(uid, uname, uemail, upass, uloc)
@@ -57,11 +57,11 @@ class Users:
 
     #4 - Updates an existing user's information
     def updateUserById(self, json):
-        uname = json['uname']
-        uemail = json['uemail']
-        upass = json['upass']
-        uloc = json['uloc']
-        uid = json['uid']
+        uname = json['name']
+        uemail = json['email']
+        upass = json['pass']
+        uloc = json['loc']
+        uid = json['id']
         dao = UsersDAO()
         updated_user = dao.updateUserById(uid, uname, uemail, upass, uloc)
         result = self.build_attr_dict(uid, uname, uemail, upass, uloc)

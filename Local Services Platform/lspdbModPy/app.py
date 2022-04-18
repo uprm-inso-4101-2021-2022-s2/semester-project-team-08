@@ -4,6 +4,7 @@ import sys
 from flask import Flask, request, jsonify, render_template, redirect
 from flask_cors import CORS
 from controller.users import Users
+from controller.providers import Providers
 
 app = Flask(__name__)
 CORS(app)
@@ -13,11 +14,17 @@ CORS(app)
 # def foo():
 #     return render_template("public/index.html")
 
+# User management routes go here:
 @app.route("/", methods=["GET", "POST"])
 def landing():
     if request.method == "POST":
         req = request.form
-        Users().addNewUser(req)
+        utype = req.get('user_type')
+        if utype == "1":
+            Users().addNewUser(req)
+        elif utype == "2":
+            Providers().addNewProvider(req)
+
         return redirect(request.url)
     return render_template("public/index.html")
 
