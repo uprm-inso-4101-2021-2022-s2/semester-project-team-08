@@ -19,6 +19,7 @@ CORS(app)
 def landing():
     if request.method == "POST":
         req = request.form
+        print(req)
         utype = req.get('user_type')
         if utype == "1":
             Users().addNewUser(req)
